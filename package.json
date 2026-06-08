@@ -1,0 +1,31 @@
+{
+  "name": "restful-booker-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:report": "cypress run && open cypress/reports/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LlewellynM/restful-booker-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LlewellynM/restful-booker-cypress/issues"
+  },
+  "homepage": "https://github.com/LlewellynM/restful-booker-cypress#readme",
+  "devDependencies": {
+    "cypress": "^15.16.0",
+    "cypress-mochawesome-reporter": "^4.0.2"
+  },
+  "dependencies": {
+    "cypress-bootstrap": "^2.1.0"
+  }
+}

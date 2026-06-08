@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-08T12:59:37.446Z",
+    "end": "2026-06-08T13:00:03.676Z",
+    "duration": 26230,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aa946392-7911-4495-ab15-57812543ad89",
+      "title": "",
+      "fullFile": "cypress\\e2e\\contact.cy.js",
+      "file": "cypress\\e2e\\contact.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bb403401-65c4-4c7f-a260-f456c3ca44df",
+          "title": "Contact Form",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-011: submits successfully with all valid fields",
+              "fullTitle": "Contact Form TC-011: submits successfully with all valid fields",
+              "timedOut": null,
+              "duration": 8029,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\contact.cy.js\"\n}",
+              "code": "cy.get('[data-testid=\"ContactName\"]').type('John Doe');\ncy.get('[data-testid=\"ContactEmail\"]').type('john@example.com');\ncy.get('[data-testid=\"ContactPhone\"]').type('01234567890');\ncy.get('[data-testid=\"ContactSubject\"]').type('Valid Subject Here');\ncy.get('[data-testid=\"ContactDescription\"]').type('This is a valid message with enough characters to pass.');\ncy.get('.d-grid > .btn').click();\ncy.contains('Thanks for getting in touch', {\n  timeout: 8000\n}).should('be.visible');",
+              "err": {},
+              "uuid": "fa130277-89a0-4949-8783-da332728ef70",
+              "parentUUID": "bb403401-65c4-4c7f-a260-f456c3ca44df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-012: shows errors when all fields are empty",
+              "fullTitle": "Contact Form TC-012: shows errors when all fields are empty",
+              "timedOut": null,
+              "duration": 1806,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\contact.cy.js\"\n}",
+              "code": "cy.get('.d-grid > .btn').click();\ncy.get('.alert-danger').should('be.visible');",
+              "err": {},
+              "uuid": "1d76efc9-2a2e-4875-893e-5534ba19fd02",
+              "parentUUID": "bb403401-65c4-4c7f-a260-f456c3ca44df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-013: rejects subject under 5 characters",
+              "fullTitle": "Contact Form TC-013: rejects subject under 5 characters",
+              "timedOut": null,
+              "duration": 5026,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\contact.cy.js\"\n}",
+              "code": "cy.get('[data-testid=\"ContactName\"]').type('John Doe');\ncy.get('[data-testid=\"ContactEmail\"]').type('john@example.com');\ncy.get('[data-testid=\"ContactPhone\"]').type('01234567890');\ncy.get('[data-testid=\"ContactSubject\"]').type('Hi');\ncy.get('[data-testid=\"ContactDescription\"]').type('This is a valid message with enough characters.');\ncy.get('.d-grid > .btn').click();\ncy.get('.alert-danger').should('contain.text', 'Subject must be between 5 and 100 characters');",
+              "err": {},
+              "uuid": "b342d7f7-0d99-4540-b918-4757189f1a13",
+              "parentUUID": "bb403401-65c4-4c7f-a260-f456c3ca44df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-014: rejects message under 20 characters",
+              "fullTitle": "Contact Form TC-014: rejects message under 20 characters",
+              "timedOut": null,
+              "duration": 3445,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\contact.cy.js\"\n}",
+              "code": "cy.get('[data-testid=\"ContactName\"]').type('John Doe');\ncy.get('[data-testid=\"ContactEmail\"]').type('john@example.com');\ncy.get('[data-testid=\"ContactPhone\"]').type('01234567890');\ncy.get('[data-testid=\"ContactSubject\"]').type('Valid Subject');\ncy.get('[data-testid=\"ContactDescription\"]').type('Too short');\ncy.get('.d-grid > .btn').click();\ncy.get('.alert-danger').should('be.visible');",
+              "err": {},
+              "uuid": "9b4b9c53-49e3-45e5-bac1-7fc92b51d70b",
+              "parentUUID": "bb403401-65c4-4c7f-a260-f456c3ca44df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-015: rejects subject over 100 characters",
+              "fullTitle": "Contact Form TC-015: rejects subject over 100 characters",
+              "timedOut": null,
+              "duration": 6967,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\contact.cy.js\"\n}",
+              "code": "cy.fixture('testData').then(data => {\n  cy.get('[data-testid=\"ContactName\"]').type('John Doe');\n  cy.get('[data-testid=\"ContactEmail\"]').type('john@example.com');\n  cy.get('[data-testid=\"ContactPhone\"]').type('01234567890');\n  cy.get('[data-testid=\"ContactSubject\"]').type(data.longString);\n  cy.get('[data-testid=\"ContactDescription\"]').type('This is a valid message with enough characters.');\n  cy.get('.d-grid > .btn').click();\n  cy.get('.alert-danger').should('be.visible');\n});",
+              "err": {},
+              "uuid": "68121bd9-ce80-401f-8797-394ea03119d4",
+              "parentUUID": "bb403401-65c4-4c7f-a260-f456c3ca44df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fa130277-89a0-4949-8783-da332728ef70",
+            "1d76efc9-2a2e-4875-893e-5534ba19fd02",
+            "b342d7f7-0d99-4540-b918-4757189f1a13",
+            "9b4b9c53-49e3-45e5-bac1-7fc92b51d70b",
+            "68121bd9-ce80-401f-8797-394ea03119d4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25273,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

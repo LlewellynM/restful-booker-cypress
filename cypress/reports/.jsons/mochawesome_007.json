@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-06-07T21:44:17.234Z",
+    "end": "2026-06-07T21:44:39.855Z",
+    "duration": 22621,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "aced1072-434c-4308-b8bd-3d9f85c7e98a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\booking.cy.js",
+      "file": "cypress\\e2e\\booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d28a2b21-74d8-4b7b-8fa2-b47361be35e1",
+          "title": "Booking Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-001: completes a booking with valid data",
+              "fullTitle": "Booking Flow TC-001: completes a booking with valid data",
+              "timedOut": null,
+              "duration": 22344,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\booking.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\booking.cy.js\\\\Booking Flow -- TC-001 completes a booking with valid data (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "const uniqueEmail = `joe.smith${Date.now()}@example.com`;\ncy.contains('Book now').first().click();\ncy.wait(1000);\ncy.contains('Reserve Now').first().click();\ncy.wait(2000);\ncy.scrollTo('top');\ncy.get('[name=\"firstname\"]').type(\"Joe\");\ncy.get('[name=\"lastname\"]').type(\"Smith\");\ncy.get('[name=\"email\"]').type(uniqueEmail);\ncy.get('[name=\"phone\"]').type('01234567890');\ncy.contains('Reserve Now').click();\ncy.wait(5000);\ncy.contains('Booking Confirmed', {\n  timeout: 5000\n}).should('be.visible');\ncy.clearAllCookies;",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 5000ms: Expected to find content: 'Booking Confirmed' but never did.",
+                "estack": "AssertionError: Timed out retrying after 5000ms: Expected to find content: 'Booking Confirmed' but never did.\n    at Context.eval (webpack://restful-booker-cypress/./cypress/e2e/booking.cy.js:25:52)",
+                "diff": null
+              },
+              "uuid": "b76cc4db-26e2-4f1a-80b4-7bdc615ee644",
+              "parentUUID": "d28a2b21-74d8-4b7b-8fa2-b47361be35e1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b76cc4db-26e2-4f1a-80b4-7bdc615ee644"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22344,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

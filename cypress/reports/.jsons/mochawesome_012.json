@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-08T12:58:50.979Z",
+    "end": "2026-06-08T12:59:07.215Z",
+    "duration": 16236,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "11df7859-3c34-4ac3-bdcf-a79cf5f0f90a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\booking.cy.js",
+      "file": "cypress\\e2e\\booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5425d2e8-a54f-493f-aa13-eaf9c75f3a54",
+          "title": "Booking Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-001: completes a booking with valid data",
+              "fullTitle": "Booking Flow TC-001: completes a booking with valid data",
+              "timedOut": null,
+              "duration": 16072,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\booking.cy.js\"\n}",
+              "code": "// 1. Enter Check-in and Check-out dates in the availability form\n// The inputs are inside react-datepicker containers\ncy.get('label[for=\"checkin\"]').parent().find('input').clear().type('2028-06-13{enter}');\ncy.get('label[for=\"checkout\"]').parent().find('input').clear().type('2028-06-15{enter}');\n// 2. Click \"Check Availability\"\ncy.contains('button', 'Check Availability').click();\n// 3. Select the first available room's \"Book now\" button\n// This targets the first room card's primary button\ncy.get('#rooms > .container').first().find('a.btn-primary, button').contains('Book now').click();\ncy.wait(1000); // Wait for booking form to load\ncy.contains('button', 'Reserve Now').click();\ncy.scrollTo('top'); // Ensure form is in view\n// 4. Enter User Details (assuming navigation to reservation page or modal)\n// The fields use data-testid and standard IDs\ncy.get('[name=\"firstname\"]').type('Joe');\ncy.get('[name=\"lastname\"]').type('Smith');\ncy.get('.room-email').type(`joe.smith${Date.now()}@example.com`);\ncy.get('.room-phone').type('01234567890');\ncy.contains('button', 'Reserve Now').click();\ncy.wait(5000); // Wait for confirmation to process\n// 5. Confirm the Booking\ncy.contains('Booking Confirmed', {\n  timeout: 10000\n}).should('be.visible');\n// 6. Verify success (adjust based on actual success message)\ncy.contains('Your booking has been confirmed ').should('be.visible');\ncy.scrollTo('top'); // Ensure form is in view",
+              "err": {},
+              "uuid": "a49f7810-ab9b-4bd5-9136-2ee3f569ed88",
+              "parentUUID": "5425d2e8-a54f-493f-aa13-eaf9c75f3a54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a49f7810-ab9b-4bd5-9136-2ee3f569ed88"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16072,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

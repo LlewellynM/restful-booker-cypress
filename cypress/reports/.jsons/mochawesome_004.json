@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-06-07T11:23:36.498Z",
+    "end": "2026-06-07T11:23:49.731Z",
+    "duration": 13233,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "37a98601-5997-478d-8fe6-210f2b00b675",
+      "title": "",
+      "fullFile": "cypress\\e2e\\rooms.cy.js",
+      "file": "cypress\\e2e\\rooms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c9814b1d-a66f-418d-bba5-010fdafb801f",
+          "title": "Room Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-024: creates a room with all valid fields",
+              "fullTitle": "Room Management TC-024: creates a room with all valid fields",
+              "timedOut": null,
+              "duration": 12976,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\rooms.cy.js\\\\Room Management -- TC-024 creates a room with all valid fields (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.get('#roomName').type('301');\ncy.get('#type').select('Single');\ncy.get('#accessible').select('true');\ncy.get('#roomPrice').clear().type('120');\ncy.get('#createRoom').click();\ncy.contains('301').should('be.visible');\ncy.wait(1000);\n// Cleanup - delete the room\ncy.get('.delete', {\n  timeout: 2000\n}).first().click();\ncy.wait(1000);\ncy.contains('301').should('not.exist');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 2000ms: Expected to find element: `.delete`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 2000ms: Expected to find element: `.delete`, but never found it.\n    at Context.eval (webpack://restful-booker-cypress/./cypress/e2e/rooms.cy.js:24:7)",
+                "diff": null
+              },
+              "uuid": "b3b5a16b-e24a-4d5a-b402-a566b87e7387",
+              "parentUUID": "c9814b1d-a66f-418d-bba5-010fdafb801f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "b3b5a16b-e24a-4d5a-b402-a566b87e7387"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12976,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

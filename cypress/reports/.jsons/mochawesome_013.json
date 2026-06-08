@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-08T12:59:13.746Z",
+    "end": "2026-06-08T12:59:30.808Z",
+    "duration": 17062,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9d85ba6d-4557-468c-b4f5-758d8967d25d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\branding.cy.js",
+      "file": "cypress\\e2e\\branding.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "TC-035: updates hotel name and reflects it on the page",
+          "fullTitle": "TC-035: updates hotel name and reflects it on the page",
+          "timedOut": null,
+          "duration": 11496,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\branding.cy.js\"\n}",
+          "code": "cy.get('#name').clear().type('Test Hotel Updated');\ncy.get('#updateBranding').click();",
+          "err": {},
+          "uuid": "21aedf1c-e3f4-4685-a241-6c773eccae4d",
+          "parentUUID": "9d85ba6d-4557-468c-b4f5-758d8967d25d",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "TC-036: updates contact phone and email",
+          "fullTitle": "TC-036: updates contact phone and email",
+          "timedOut": null,
+          "duration": 5279,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\branding.cy.js\"\n}",
+          "code": "cy.get('#contactPhone').clear().type('09876543210');\ncy.get('#contactEmail').clear().type('updated@hotel.com');\ncy.get('#updateBranding').click();",
+          "err": {},
+          "uuid": "fd9120ea-9462-4609-a6fd-c210e944795d",
+          "parentUUID": "9d85ba6d-4557-468c-b4f5-758d8967d25d",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "21aedf1c-e3f4-4685-a241-6c773eccae4d",
+        "fd9120ea-9462-4609-a6fd-c210e944795d"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 16775,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

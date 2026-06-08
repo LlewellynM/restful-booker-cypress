@@ -1,0 +1,12 @@
+{
+  "validBooking": {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@test.com",
+    "phone": "01234567890",
+    "checkin": "2026-09-01",
+    "checkout": "2026-09-05"
+  },
+  "xssPayload": "<script>alert('xss')</script>",
+  "longString": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+}
