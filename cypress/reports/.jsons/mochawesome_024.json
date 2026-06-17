@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-06-15T10:07:37.489Z",
+    "end": "2026-06-15T10:07:57.642Z",
+    "duration": 20153,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0489009f-10ef-4fce-9fb6-f9951887a7b9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin-bookings.cy.js",
+      "file": "cypress\\e2e\\admin-bookings.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7022d9bd-a170-41b9-89fd-a156920b1f9b",
+          "title": "Admin Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-032: admin can view the bookings list, select a booking and make an update",
+              "fullTitle": "Admin Authentication TC-032: admin can view the bookings list, select a booking and make an update",
+              "timedOut": null,
+              "duration": 19455,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\admin-bookings.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\admin-bookings.cy.js\\\\Admin Authentication -- TC-032 admin can view the bookings list, select a booking and make an update (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('/admin');\ncy.get('#username').type(Cypress.env('adminUser'));\ncy.get('#password').type(Cypress.env('adminPass'));\ncy.get('#doLogin').click();\ncy.url().should('include', '/admin');\ncy.get('.row.detail').first().click();\ncy.get('.col-sm-2 > .btn').should('be.visible').click();\ncy.get('#roomPrice').type('200');\ncy.get('#update').click();\ncy.get('.col-sm-6').contains('Room price:').should('contain', '200');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 8000ms: expected '<label.editLabel>' to contain '200'",
+                "estack": "AssertionError: Timed out retrying after 8000ms: expected '<label.editLabel>' to contain '200'\n    at Context.eval (webpack://restful-booker-cypress/./cypress/e2e/admin-bookings.cy.js:16:44)",
+                "diff": null
+              },
+              "uuid": "5a095239-537a-4403-aade-aa259cdc3ca9",
+              "parentUUID": "7022d9bd-a170-41b9-89fd-a156920b1f9b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5a095239-537a-4403-aade-aa259cdc3ca9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 19455,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

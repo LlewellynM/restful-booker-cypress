@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-06-13T15:55:04.224Z",
+    "end": "2026-06-13T15:56:17.948Z",
+    "duration": 73724,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "20046fdc-91de-4e8b-b90e-4ac19a2be6c8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\rooms.cy.js",
+      "file": "cypress\\e2e\\rooms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7fa29ded-d07d-43fb-8e60-f03392cfac9a",
+          "title": "Room Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-024: creates & deletes a room with all valid fields",
+              "fullTitle": "Room Management TC-024: creates & deletes a room with all valid fields",
+              "timedOut": null,
+              "duration": 17068,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n}",
+              "code": "cy.get('#roomName').type('301');\ncy.get('#type').select('Single');\ncy.get('#accessible').select('true');\ncy.get('#roomPrice').clear().type('120');\ncy.get('#createRoom').click();\ncy.contains('301').should('be.visible');\ncy.wait(1000);\n// Cleanup - delete the room\ncy.contains('.row.detail', '301').find('.roomDelete').click();\ncy.contains('301').should('not.exist');",
+              "err": {},
+              "uuid": "aad71ef5-cf45-4571-8d5a-cb813dec9232",
+              "parentUUID": "7fa29ded-d07d-43fb-8e60-f03392cfac9a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-027: rejects a zero room price",
+              "fullTitle": "Room Management TC-027: rejects a zero room price",
+              "timedOut": null,
+              "duration": 45032,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n}",
+              "code": "cy.get('#roomName').type('ZERO1');\ncy.get('#type').select('Single');\ncy.get('#accessible').select('false');\ncy.get('#roomPrice').clear().type('0');\ncy.get('#createRoom').click();\ncy.get('.alert-danger').should('be.visible');",
+              "err": {},
+              "uuid": "e48b676e-d630-4862-a46c-f571ee1c7089",
+              "parentUUID": "7fa29ded-d07d-43fb-8e60-f03392cfac9a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-026: rejects a negative room price",
+              "fullTitle": "Room Management TC-026: rejects a negative room price",
+              "timedOut": null,
+              "duration": 10991,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\rooms.cy.js\\\\Room Management -- TC-026 rejects a negative room price -- before each hook (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.get('#roomName').type('NEG1');\ncy.get('#type').select('Double');\ncy.get('#accessible').select('false');\ncy.get('#roomPrice').clear().type('-50');\ncy.get('#createRoom').click();\ncy.get('.alert-danger').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 8000ms: Expected to find content: 'Room details' but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Room Management`",
+                "estack": "AssertionError: Timed out retrying after 8000ms: Expected to find content: 'Room details' but never did.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Room Management`\n    at Context.eval (webpack://restful-booker-cypress/./cypress/e2e/rooms.cy.js:10:7)",
+                "diff": null
+              },
+              "uuid": "24cb7391-30c5-4a39-8f06-e279bdf1127e",
+              "parentUUID": "7fa29ded-d07d-43fb-8e60-f03392cfac9a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aad71ef5-cf45-4571-8d5a-cb813dec9232",
+            "e48b676e-d630-4862-a46c-f571ee1c7089"
+          ],
+          "failures": [
+            "24cb7391-30c5-4a39-8f06-e279bdf1127e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 73091,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

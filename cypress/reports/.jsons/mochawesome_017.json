@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-06-13T15:51:21.321Z",
+    "end": "2026-06-13T15:52:33.482Z",
+    "duration": 72161,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "48a9a28c-2e52-41ae-964d-dc318860062d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\admin-auth.cy.js",
+      "file": "cypress\\e2e\\admin-auth.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e0fd41f-6ebe-4248-bd79-c299754ed55e",
+          "title": "Admin Authentication",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-018: logs in with valid credentials",
+              "fullTitle": "Admin Authentication TC-018: logs in with valid credentials",
+              "timedOut": null,
+              "duration": 61481,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\admin-auth.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\admin-auth.cy.js\\\\Admin Authentication -- TC-018 logs in with valid credentials (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit('/admin');\ncy.get('#username').type(Cypress.env('adminUser'));\ncy.get('#password').type(Cypress.env('adminPass'));\ncy.get('#doLogin').click();\ncy.url().should('include', '/admin');\ncy.contains('Room details');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://automationintesting.online/__cypress/runner/cypress_runner.js:134335:64)\n    at <unknown> (https://automationintesting.online/__cypress/runner/cypress_runner.js:135331:16)\n    at tryCatcher (https://automationintesting.online/__cypress/runner/cypress_runner.js:1777:23)\n    at <unknown> (https://automationintesting.online/__cypress/runner/cypress_runner.js:4156:41)\n    at tryCatcher (https://automationintesting.online/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://automationintesting.online/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://automationintesting.online/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://automationintesting.online/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://automationintesting.online/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://automationintesting.online/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://automationintesting.online/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://automationintesting.online/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://automationintesting.online/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://restful-booker-cypress/./cypress/e2e/admin-auth.cy.js:5:7)",
+                "diff": null
+              },
+              "uuid": "11b15eb1-9c25-4037-9245-9d93b7e5e758",
+              "parentUUID": "1e0fd41f-6ebe-4248-bd79-c299754ed55e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-019: rejects invalid credentials",
+              "fullTitle": "Admin Authentication TC-019: rejects invalid credentials",
+              "timedOut": null,
+              "duration": 4834,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\admin-auth.cy.js\"\n}",
+              "code": "cy.visit('/admin');\ncy.get('#username').type('admin');\ncy.get('#password').type('wrongpassword');\ncy.get('#doLogin').click();\ncy.get('.alert-danger').should('be.visible');\ncy.get('.roomlisting').should('not.exist');",
+              "err": {},
+              "uuid": "0fcbf10d-08db-4ca2-85ee-e0ea55a2bd4a",
+              "parentUUID": "1e0fd41f-6ebe-4248-bd79-c299754ed55e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-020: shows error when credentials are blank",
+              "fullTitle": "Admin Authentication TC-020: shows error when credentials are blank",
+              "timedOut": null,
+              "duration": 2431,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\admin-auth.cy.js\"\n}",
+              "code": "cy.visit('/admin');\ncy.get('#doLogin').click();\ncy.get('.alert-danger, .invalid-feedback').should('be.visible');",
+              "err": {},
+              "uuid": "378b9110-9cd3-47e9-93ea-9582d15691ac",
+              "parentUUID": "1e0fd41f-6ebe-4248-bd79-c299754ed55e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-023: clears session on logout",
+              "fullTitle": "Admin Authentication TC-023: clears session on logout",
+              "timedOut": null,
+              "duration": 1694,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\admin-auth.cy.js\"\n}",
+              "code": "cy.visit('/admin');\ncy.get('#username').type('admin');\ncy.get('#password').type('password');\ncy.get('#doLogin').click();\ncy.get('.ms-auto > :nth-child(2) > .btn').click();\ncy.clearCookies();\n// cy.visit('/admin')\n// cy.get('#username').should('be.visible')\n// cy.get('.roomlisting').should('not.exist')",
+              "err": {},
+              "uuid": "20900c80-54db-45c1-baa1-7e719c8a2063",
+              "parentUUID": "1e0fd41f-6ebe-4248-bd79-c299754ed55e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0fcbf10d-08db-4ca2-85ee-e0ea55a2bd4a",
+            "378b9110-9cd3-47e9-93ea-9582d15691ac",
+            "20900c80-54db-45c1-baa1-7e719c8a2063"
+          ],
+          "failures": [
+            "11b15eb1-9c25-4037-9245-9d93b7e5e758"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 70440,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

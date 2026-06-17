@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-15T10:09:29.858Z",
+    "end": "2026-06-15T10:09:52.027Z",
+    "duration": 22169,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "352ab9b7-9191-498c-854b-cef4c7d39156",
+      "title": "",
+      "fullFile": "cypress\\e2e\\rooms.cy.js",
+      "file": "cypress\\e2e\\rooms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d02c322c-01df-4a87-bc33-9150871839f3",
+          "title": "Room Management",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-024: creates & deletes a room with all valid fields",
+              "fullTitle": "Room Management TC-024: creates & deletes a room with all valid fields",
+              "timedOut": null,
+              "duration": 9932,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n}",
+              "code": "cy.get('#roomName').type('301');\ncy.get('#type').select('Single');\ncy.get('#accessible').select('true');\ncy.get('#roomPrice').clear().type('120');\ncy.get('#createRoom').click();\ncy.contains('301').should('be.visible');\ncy.wait(1000);\n// Cleanup - delete the room\ncy.contains('.row.detail', '301').find('.roomDelete').click();\ncy.contains('301').should('not.exist');",
+              "err": {},
+              "uuid": "666e5124-7766-4ca8-9def-6506eb68f8ba",
+              "parentUUID": "d02c322c-01df-4a87-bc33-9150871839f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-027: rejects a zero room price",
+              "fullTitle": "Room Management TC-027: rejects a zero room price",
+              "timedOut": null,
+              "duration": 6152,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n}",
+              "code": "cy.get('#roomName').type('ZERO1');\ncy.get('#type').select('Single');\ncy.get('#accessible').select('false');\ncy.get('#roomPrice').clear().type('0');\ncy.get('#createRoom').click();\ncy.get('.alert-danger').should('be.visible');",
+              "err": {},
+              "uuid": "c3894ce5-1975-4320-8e51-f50f75e5f3ec",
+              "parentUUID": "d02c322c-01df-4a87-bc33-9150871839f3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC-026: rejects a negative room price",
+              "fullTitle": "Room Management TC-026: rejects a negative room price",
+              "timedOut": null,
+              "duration": 5543,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\rooms.cy.js\"\n}",
+              "code": "cy.get('#roomName').type('NEG1');\ncy.get('#type').select('Double');\ncy.get('#accessible').select('false');\ncy.get('#roomPrice').clear().type('-50');\ncy.get('#createRoom').click();\ncy.get('.alert-danger').should('be.visible');",
+              "err": {},
+              "uuid": "cec060da-000d-485e-9a6e-19e7061c41f4",
+              "parentUUID": "d02c322c-01df-4a87-bc33-9150871839f3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "666e5124-7766-4ca8-9def-6506eb68f8ba",
+            "c3894ce5-1975-4320-8e51-f50f75e5f3ec",
+            "cec060da-000d-485e-9a6e-19e7061c41f4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21627,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

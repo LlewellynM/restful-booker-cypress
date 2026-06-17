@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-06-13T15:53:15.115Z",
+    "end": "2026-06-13T15:53:28.003Z",
+    "duration": 12888,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c860566-11bb-498e-a8d7-b527bcb18c52",
+      "title": "",
+      "fullFile": "cypress\\e2e\\booking.cy.js",
+      "file": "cypress\\e2e\\booking.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "08f949b9-1465-47c4-a66e-d370db0d55f5",
+          "title": "Booking Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC-001: completes a booking with valid data",
+              "fullTitle": "Booking Flow TC-001: completes a booking with valid data",
+              "timedOut": null,
+              "duration": 12519,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\booking.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\booking.cy.js\\\\Booking Flow -- TC-001 completes a booking with valid data (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// 1. Enter Check-in and Check-out dates in the availability form\n// The inputs are inside react-datepicker containers\ncy.get('label[for=\"checkin\"]').parent().find('input').clear().type('2028-06-13{enter}');\ncy.get('label[for=\"checkout\"]').parent().find('input').clear().type('2028-06-15{enter}');\n// 2. Click \"Check Availability\"\ncy.contains('button', 'Check Availability').click();\n// 3. Select the first available room's \"Book now\" button\n// This targets the first room card's primary button\ncy.get('#rooms > .container').first().find('a.btn-primary, button').contains('Book now').click();\ncy.wait(1000); // Wait for booking form to load\ncy.contains('button', 'Reserve Now').click();\ncy.scrollTo('top'); // Ensure form is in view\n// 4. Enter User Details (assuming navigation to reservation page or modal)\n// The fields use data-testid and standard IDs\ncy.get('[name=\"firstname\"]').type('Joe');\ncy.get('[name=\"lastname\"]').type('Smith');\ncy.get('.room-email').type(`joe.smith${Date.now()}@example.com`);\ncy.get('.room-phone').type('01234567890');\ncy.contains('button', 'Reserve Now').click();\ncy.wait(5000); // Wait for confirmation to process\n// 5. Confirm the Booking\ncy.contains('Booking Confirmed', {\n  timeout: 10000\n}).should('be.visible');\n// 6. Verify success (adjust based on actual success message)\ncy.contains('Your booking has been confirmed ').should('be.visible');\ncy.scrollTo('top'); // Ensure form is in view",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `label[for=\"checkin\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `label[for=\"checkin\"]`, but never found it.\n    at Context.eval (webpack://restful-booker-cypress/./cypress/e2e/booking.cy.js:13:7)",
+                "diff": null
+              },
+              "uuid": "5c3aa900-5dcd-49db-bf76-a5b364a1d7d6",
+              "parentUUID": "08f949b9-1465-47c4-a66e-d370db0d55f5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5c3aa900-5dcd-49db-bf76-a5b364a1d7d6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12519,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
